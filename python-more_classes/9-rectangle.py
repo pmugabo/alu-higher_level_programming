@@ -102,3 +102,13 @@ class Rectangle:
                 rect.append("\n")
         return ("".join(rect))
 
+    def __repr__(self):
+        """Return the string representation of the Rectangle."""
+        rect = "Rectangle(" + str(self.__width)
+        rect += ", " + str(self.__height) + ")"
+        return (rect)
+
+    def __del__(self):
+        """Print a message for every deletion of a Rectangle."""
+        type(self).number_of_instances -= 1
+        print("Bye rectangle...")
