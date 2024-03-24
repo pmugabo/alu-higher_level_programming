@@ -1,14 +1,16 @@
 #!/usr/bin/python3
-"""Displays the X-Request-Id header variable of a request to a given URL.
+"""Sends a POST request to a given URL with a given email.
 
-Usage: ./5-hbtn_header.py <URL>
-"""
-import sys
-import requests
+Usage: ./6-post_email.py <URL> <email>
+  - Displays the body of the response.
+  """
+  import sys
+  import requests
 
 
-if __name__ == "__main__":
-        url = sys.argv[1]
+  if __name__ == "__main__":
+          url = sys.argv[1]
+              value = {"email": sys.argv[2]}
 
-            r = requests.get(url)
-                print(r.headers.get("X-Request-Id"))
+                  r = requests.post(url, data=value)
+                      print(r.text)
